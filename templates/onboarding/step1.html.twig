@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Step 1 - User Information{% endblock %}
+
+{% block body %}
+    <h4>Step 1: User Information</h4>
+    {{ form_start(form) }}
+        <div class="mb-3">
+            {{ form_label(form.name) }}
+            {{ form_widget(form.name, { 'attr': {'class': 'form-control'} }) }}
+            {{ form_errors(form.name) }}
+        </div>
+
+        <div class="mb-3">
+            {{ form_label(form.email) }}
+            {{ form_widget(form.email, { 'attr': {'class': 'form-control'} }) }}
+            {{ form_errors(form.email) }}
+        </div>
+
+        <div class="mb-3">
+            {{ form_label(form.phoneNumber) }}
+            {{ form_widget(form.phoneNumber, { 'attr': {'class': 'form-control'} }) }}
+            {{ form_errors(form.phoneNumber) }}
+        </div>
+
+        <div class="mb-3">
+            {{ form_label(form.subscriptionType) }}
+            {{ form_widget(form.subscriptionType, { 'attr': {'class': 'form-check'} }) }}
+            {{ form_errors(form.subscriptionType) }}
+        </div>
+
+        <button type="submit" class="btn btn-primary">Next</button>
+    {{ form_end(form) }}
+{% endblock %}

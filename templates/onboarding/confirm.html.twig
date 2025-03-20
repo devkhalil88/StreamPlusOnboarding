@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Step 4 - Confirmation{% endblock %}
+
+{% block body %}
+    <h4>Step 4: Confirmation</h4>
+    <p><strong>Name:</strong> {{ user.name }}</p>
+    <p><strong>Email:</strong> {{ user.email }}</p>
+    <p><strong>Phone:</strong> {{ user.phoneNumber }}</p>
+    <p><strong>Subscription:</strong> {{ user.subscriptionType | capitalize }}</p>
+
+
+    <h5>Address</h5>
+    <p><strong>Address Line 1:</strong> {{ user.getAddressLine1() }}</p>
+    <p><strong>City:</strong> {{ user.getCity() }}</p>
+    <p><strong>State:</strong> {{ user.getState() }}</p>
+    <p><strong>Postal Code:</strong> {{ user.getPostalCode() }}</p>
+    <p><strong>Country:</strong> {{ user.getCountry() }}</p>
+
+    {% if user.subscriptionType == 'premium' %}
+        <h5>Payment Information</h5>
+        <p><strong>Credit Card:</strong> **** **** **** {{ user.creditCardNumber[-4:] }}</p>
+        <p><strong>Expiration:</strong> {{ user.expirationDate }}</p>
+    {% endif %}
+
+
+    <form action="{{ path('onboarding_submit') }}" method="post">
+        <button type="submit" class="btn btn-success">Confirm & Submit</button>
+    </form>
+{% endblock %}

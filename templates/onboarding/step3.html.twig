@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Step 3 - Payment Information{% endblock %}
+
+{% block body %}
+    <h4>Step 3: Payment Information</h4>
+    {{ form_start(form) }}
+
+        <div class="mb-3">
+            {{ form_label(form.creditCardNumber) }}
+            {{ form_widget(form.creditCardNumber, { 'attr': {'class': 'form-control'} }) }}
+            {{ form_errors(form.creditCardNumber) }}
+        </div>
+
+        <div class="mb-3">
+            {{ form_label(form.expirationDate) }}
+            {{ form_widget(form.expirationDate, { 'attr': {'class': 'form-control'} }) }}
+            {{ form_errors(form.expirationDate) }}
+        </div>
+
+        <div class="mb-3">
+            {{ form_label(form.cvv) }}
+            {{ form_widget(form.cvv, { 'attr': {'class': 'form-control'} }) }}
+            {{ form_errors(form.cvv) }}
+        </div>
+
+    <a href="{{ path('onboarding_step2') }}" class="btn btn-secondary">Back</a>
+    <button type="submit" class="btn btn-primary">Next</button>
+
+    {{ form_end(form) }}
+{% endblock %}

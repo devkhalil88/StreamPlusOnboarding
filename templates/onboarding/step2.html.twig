@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Step 2 - Address Information{% endblock %}
+
+{% block body %}
+    <h4>Step 2: Address Information</h4>
+    {{ form_start(form) }}
+
+        <div class="mb-3">
+            {{ form_label(form.addressLine1) }}
+            {{ form_widget(form.addressLine1, { 'attr': {'class': 'form-control'} }) }}
+            {{ form_errors(form.addressLine1) }}
+        </div>
+
+        <div class="mb-3">
+            {{ form_label(form.addressLine2) }}
+            {{ form_widget(form.addressLine2, { 'attr': {'class': 'form-control'} }) }}
+            {{ form_errors(form.addressLine2) }}
+        </div>
+
+        <div class="mb-3">
+            {{ form_label(form.city) }}
+            {{ form_widget(form.city, { 'attr': {'class': 'form-control'} }) }}
+            {{ form_errors(form.city) }}
+        </div>
+
+        <div class="mb-3">
+            {{ form_label(form.postalCode) }}
+            {{ form_widget(form.postalCode, { 'attr': {'class': 'form-control'} }) }}
+            {{ form_errors(form.postalCode) }}
+        </div>
+
+        <div class="mb-3">
+            {{ form_label(form.state) }}
+            {{ form_widget(form.state, { 'attr': {'class': 'form-control'} }) }}
+            {{ form_errors(form.state) }}
+        </div>
+
+        <div class="mb-3">
+            {{ form_label(form.country) }}
+            {{ form_widget(form.country, { 'attr': {'class': 'form-control'} }) }}
+            {{ form_errors(form.country) }}
+        </div>
+
+        <a href="{{ path('onboarding_step1') }}" class="btn btn-secondary">Back</a>
+    <button type="submit" class="btn btn-primary">Next</button>
+
+    {{ form_end(form) }}
+{% endblock %}

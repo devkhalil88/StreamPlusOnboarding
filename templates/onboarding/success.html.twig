@@ -1,0 +1,9 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Registration Complete{% endblock %}
+
+{% block body %}
+    <h4>Thank You!</h4>
+    <p>Your subscription has been successfully registered.</p>
+    <a href="{{ path('onboarding_step1') }}" class="btn btn-primary">Go to Step 1</a>
+{% endblock %}
